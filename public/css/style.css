@@ -1,0 +1,22 @@
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    }
+
+  main {
+    flex: 1 0 auto;
+  }
+ .thincanvas{
+   width:100px;
+   height: 600px;
+   border: 1px solid black;
+ }
+  .canvasbox{
+    display: flex;
+    margin: 10% auto;
+  justify-content: center;
+}
+  }
+  
