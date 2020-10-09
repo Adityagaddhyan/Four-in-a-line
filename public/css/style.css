@@ -9,7 +9,7 @@
     flex: 1 0 auto;
   }
  .thincanvas{
-   width:100px;
+   width:700px;
    height: 600px;
    border: 1px solid black;
  }
@@ -18,5 +18,9 @@
     margin: 10% auto;
   justify-content: center;
 }
-  }
+.optionbox{
+  display: flex;
+  margin:2% 14%;
+  justify-content: space-between;
+}
   

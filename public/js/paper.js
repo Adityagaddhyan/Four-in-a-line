@@ -1,7 +1,16 @@
-console.log("ok");
-import $ from "jquery";
+document.addEventListener("DOMContentLoaded", function() { 
+    function getMousePosition(canvas, event) { 
+        let rect = canvas.getBoundingClientRect(); 
+        let x = event.clientX - rect.left; 
+        let y = event.clientY - rect.top; 
+        console.log("Coordinate x: " + x, 
+                    "Coordinate y: " + y); 
+    } 
 
-var shape = new Shape.Circle(new Point(20, 20), 30);
-shape.strokeColor = 'black';
-shape.fillColor='black';
-
+    let canvasElem = document.querySelector("canvas"); 
+    
+    canvasElem.addEventListener("mousedown", function(e) 
+    { 
+        getMousePosition(canvasElem, e); 
+    }); 
+});
