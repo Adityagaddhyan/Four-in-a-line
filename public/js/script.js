@@ -57,20 +57,22 @@ window.onload = function () {
                 row = makemove(col);
                 console.log(row,col);
                 makeCircle(row,col,movenumber%2);
-
+                
             }
             else{
                 console.log("invalid");
             }
         })
     }
-
+   
     function makeCircle(row,col,player) {
         var x=col*90-45;
         var y=630+90-row*90-45;
         var myCircle = new Path.Circle(new Point(x,y), 35);
-        myCircle.fillColor = player==0?'yellow':'green';
+        myCircle.fillColor = player==0?'#40c4ff':'#76ff03';
+        myCircle.fadeIn(4000);
     }
+   
     tool.onMouseDrag = function (event) {
         var point = event.point;
         console.log(point);
