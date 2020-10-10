@@ -8,7 +8,7 @@ var matrix=[
     [0,0,0,0,0,0,0]
 ];
 var moveCount=0;
-var colindex=[];
+var colindex=[0,0,0,0,0,0,0];
 function vertical(x,y,player){
     var count=1;
     for(var j=y;j>(y-3>0?y-3:0);j--){
@@ -17,6 +17,7 @@ function vertical(x,y,player){
     for(var j=y;j<(y+3<7?y+3:6);j++){
         if(matrix[x][j]==player)count++;
     }
+    console.log("ver",count);
     return count>3;
 }
 function horizontal(x,y,player){
@@ -27,6 +28,8 @@ function horizontal(x,y,player){
     for(var i=x;i<(x+3<7?x+3:6);i++){
         if(matrix[i][y]==player)count++;
     }
+    console.log("hor",count);
+
     return count>3;
 }
 function diagonal1(x,y,player){
@@ -37,6 +40,8 @@ function diagonal1(x,y,player){
     for(var i=x,j=y;i<(x+3<7?x+3:6) && j<(y+3<7?y+3:6);i++,j++){
         if(matrix[i][j]==player)count++;
     }
+    console.log("d1",count);
+
     return count>3;
 }
 function diagonal2(x,y,player){
@@ -47,6 +52,8 @@ function diagonal2(x,y,player){
     for(var i=x,j=y;i<(x+3<7?x+3:6) && j>(y-3>0?y-3:0);i++,j--){
         if(matrix[i][j]==player)count++;
     }
+    console.log("d2",count);
+
     return count>3;
 }
 function checkWon(x,y,player){
@@ -54,34 +61,32 @@ function checkWon(x,y,player){
 }
 
 function restart(){
-    var matrix2=[
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0]
-    ];
-    matrix=matrix2;
+    for(var i=0;i<7;i++){
+        for(var j=0;j<7;j++){
+            matrix[i][j]=0;
+        }
+        colindex[i]=0;
+    }
+    console.log("restarting...")
 }
 
 function isValid(col){
     col--;
     console.log(col,"isvalid");
-    if(matrix[col][6]==0)return true;
+    console.log(colindex[col],"colin");
+    if(matrix[col][6]==0 && colindex[col]!=8)return true;
     return false;
 }
 function move(){
-    return moveCount%2;
+    return moveCount%2==0?1:2;
 }
 //col should range from 1-7 so decrease everywhere in this file else error
 function makeMove(col){
     col--;
     moveCount++;
     var player=move();
-    colindex[col]+=1;
     matrix[col][colindex[col]]=player;
+    colindex[col]+=1;
     var result={};
     result.won=checkWon(col,colindex[col],player);
     result.player=player;
@@ -93,3 +98,32 @@ module.exports.makeMove=makeMove;
 module.exports.move=move;
 module.exports.restart=restart;
 module.exports.isValid=isValid;
+
+
+//code for testing
+
+// restart();
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
