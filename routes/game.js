@@ -64,6 +64,7 @@ function checkWon(x, y, player) {
 module.exports = {
     restart: function(){
         moveNumber = 0;
+        arr = new Array(7);
         for (var i = 0; i < 6; i++) {
             arr[i] = new Array(6);
         }

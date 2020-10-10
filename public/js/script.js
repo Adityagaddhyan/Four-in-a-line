@@ -35,7 +35,7 @@ window.onload = function() {
        var col=Math.ceil(point.x/100);
        console.log(col);
        $.get("/start/"+col,function(data,status){
-           console.log(data);
+           if(data.valid)
        })
     }
 

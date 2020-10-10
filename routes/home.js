@@ -28,10 +28,13 @@ router.get("/start/:id",(req,res,next)=>{
             obj.won=true;
             obj.player=parseInt(result.p);
         }
+        else{
+            obj.won=false;
+        }
     }
     else{
         obj.valid=false;
     }
-    res.json(result);
+    res.json(obj);
 })
 module.exports = router;
