@@ -67,17 +67,14 @@ function restart(){
 }
 
 function isValid(col){
-    col--;
-    console.log(col,"isvalid");
     if(matrix[col][6]==0)return true;
     return false;
 }
 function move(){
     return moveCount%2;
 }
-//col should range from 1-7 so decrease everywhere in this file else error
+//col should range from 0-6 everywhere in this file else error
 function makeMove(col){
-    col--;
     moveCount++;
     var player=move();
     colindex[col]+=1;
@@ -89,7 +86,4 @@ function makeMove(col){
     //result={won:true/flase,player:0/1}
 };
 
-module.exports.makeMove=makeMove;
-module.exports.move=move;
-module.exports.restart=restart;
-module.exports.isValid=isValid;
+

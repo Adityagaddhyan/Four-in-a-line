@@ -21,26 +21,50 @@
 //     console.log("concole");
 // }
 
-    
+var arr = [0,0,0,0,0,0,0];
+var movenumber=0;
+function makemove(col) {
+    col--;
+    movenumber++;
+    arr[col] = arr[col] + 1;
+    return arr[col];
+}
 paper.install(window);
-window.onload = function() {
+window.onload = function () {
     paper.setup('myCanvas1');
     // Create a simple drawing tool:
     var tool = new Tool();
     var path;
 
     // Define a mousedown and mousedrag handler
-    tool.onMouseDown = function(event) {
-        var point=event.point;
-       var col=Math.ceil(point.x/100);
-       console.log(col);
-       $.get("/start/"+col,function(data,status){
-           if(data.valid)
-       })
+    tool.onMouseDown = function (event) {
+        var point = event.point;
+        var col = Math.ceil(point.x / 100);
+        console.log(col);
+        var row;
+        var col_=4;
+        $.get("/start/" + col, function (data, status) {
+            if (data.valid) {
+                console.log(data);  
+                row = makemove(col);
+                console.log(row,col);
+                makeCircle(row,col,movenumber%2);
+
+            }
+            else{
+                console.log("invalid");
+            }
+        })
     }
 
-    tool.onMouseDrag = function(event) {
-        var point=event.point;
+    function makeCircle(row,col,player) {
+        var x=col*100-50;
+        var y=800-row*100-50;
+        var myCircle = new Path.Circle(new Point(x,y), 40);
+        myCircle.fillColor = player==0?'yellow':'green';
+    }
+    tool.onMouseDrag = function (event) {
+        var point = event.point;
         console.log(point);
     }
 }
