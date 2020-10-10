@@ -9,37 +9,39 @@ var matrix = [
 ];
 var moveCount = 0;
 var colindex = [0, 0, 0, 0, 0, 0, 0];
-function vertical(x, y, player) {
-    var count = 1;
-    for (var j = y; j > (y - 4 > 0 ? y - 4 : 0); j--) {
-        if (matrix[x][j] == player) count++;
+function vertical(y, x, player) {
+    var count=-1;
+    var xx=x,yy=y;
+    while(yy){
+        if(matrix[yy][x]==player)count++;
         else break;
-
+        yy--;
     }
-    for (var j = y; j < (y + 4 < 7 ? y + 4 : 6); j++) {
-        if (matrix[x][j] == player) count++;
+    while(y<7){
+        if(matrix[y][x]==player) count++;
         else break;
-
+        y++;
     }
-    console.log("ver", count);
-    return count > 4;
+    return count>3;
 }
-function horizontal(x, y, player) {
-    var count = 1;
-    for (var i = x; i > (x - 4 > 0 ? x - 4 : 0); i--) {
-        if (matrix[i][y] == player) count++;
+function horizontal(y, x, player) {
+    var count=-1;
+    var xx=x,yy=y;
+    while(xx){
+        if(matrix[y][xx]==player)count++;
         else break;
+        xx--;
     }
-    for (var i = x; i < (x + 4 < 7 ? x + 4 : 6); i++) {
-        if (matrix[i][y] == player) count++;
+    while(x<7){
+        if(matrix[y][x]==player) count++;
         else break;
+        x++;
     }
-    console.log("hor", count);
-
-    return count > 4;
+    return count>3;
 }
+
 function diagonal1(x, y, player) {
-    var count = 1;
+    var count = -1;
     for (var i = x, j = y; i > (x - 4 > 0 ? x - 4 : 0) && j > (y - 4 > 0 ? y - 4 : 0); i--, j--) {
         if (matrix[i][j] == player) count++;
         else break;
@@ -52,10 +54,10 @@ function diagonal1(x, y, player) {
     }
     console.log("d1", count);
 
-    return count > 4;
+    return count > 5;
 }
 function diagonal2(x, y, player) {
-    var count = 1;
+    var count = -1;
     for (var i = x, j = y; i > (x - 4 > 0 ? x - 4 : 0) && j < (y + 4 < 7 ? y + 4 : 6); i--, j++) {
         if (matrix[i][j] == player) count++;
         else break;
@@ -68,7 +70,7 @@ function diagonal2(x, y, player) {
     }
     console.log("d2", count);
 
-    return count > 4;
+    return count > 5;
 }
 function checkWon(x, y, player) {
     return horizontal(x, y, player) || vertical(x, y, player) || diagonal1(x, y, player) || diagonal2(x, y, player);
@@ -116,16 +118,14 @@ module.exports.isValid = isValid;
 
 //code for testing
 
-// restart();
-// makeMove(1);
-// makeMove(1);
-// makeMove(2);
-// makeMove(2);
-// makeMove(3);
-// makeMove(3);
-// makeMove(4);
-// makeMove(4);
-// makeMove(1);
-// makeMove(2);
-// makeMove(1);
-// makeMove(2);
+restart();
+makeMove(1);
+makeMove(2);
+makeMove(1);
+makeMove(2);
+makeMove(2);
+makeMove(1);
+makeMove(2);
+makeMove(1);
+makeMove(2);
+makeMove(1);

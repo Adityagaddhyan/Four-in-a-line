@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.use(session({
     secret: "secret message",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
         maxAge: 12000000
     }
