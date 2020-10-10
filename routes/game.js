@@ -116,16 +116,16 @@ module.exports.isValid = isValid;
 
 //code for testing
 
-restart();
-makeMove(1);
-makeMove(1);
-makeMove(2);
-makeMove(2);
-makeMove(3);
-makeMove(3);
-makeMove(4);
-makeMove(4);
-makeMove(1);
-makeMove(2);
-makeMove(1);
-makeMove(2);
+// restart();
+// makeMove(1);
+// makeMove(1);
+// makeMove(2);
+// makeMove(2);
+// makeMove(3);
+// makeMove(3);
+// makeMove(4);
+// makeMove(4);
+// makeMove(1);
+// makeMove(2);
+// makeMove(1);
+// makeMove(2);

@@ -34,4 +34,7 @@
   margin:2% 14%;
   justify-content: space-between;
 }
+#newgame{
+  display: none;
+}
   

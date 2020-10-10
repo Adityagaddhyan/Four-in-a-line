@@ -47,7 +47,12 @@ window.onload = function () {
             if (data.valid) {
                 document.getElementById("info").textContent="Player " +(movenumber%2?1:2) +"'s move!";
                 document.getElementById("info").classList.toggle("card-pannel-green");
-                if(data.won)document.getElementById('info').textContent= "Player "+(movenumber%2?2:1)+" won!";
+                if(data.won){
+                    document.getElementById('info').textContent= "Player "+(movenumber%2?2:1)+" won!";
+                    $('canvas').fadeOut('slow');
+                    $('#newgame').fadeIn('slow');
+
+                }
                 console.log(data);  
                 row = makemove(col);
                 console.log(row,col);
