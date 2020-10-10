@@ -11,10 +11,10 @@ var moveCount=0;
 var colindex=[0,0,0,0,0,0,0];
 function vertical(x,y,player){
     var count=1;
-    for(var j=y;j>(y-3>0?y-3:0);j--){
+    for(var j=y;j>(y-4>0?y-4:0);j--){
         if(matrix[x][j]==player)count++;
     }
-    for(var j=y;j<(y+3<7?y+3:6);j++){
+    for(var j=y;j<(y+4<7?y+4:6);j++){
         if(matrix[x][j]==player)count++;
     }
     console.log("ver",count);
@@ -22,10 +22,10 @@ function vertical(x,y,player){
 }
 function horizontal(x,y,player){
     var count=1;
-    for(var i=x;i>(x-3>0?x-3:0);i--){
+    for(var i=x;i>(x-4>0?x-4:0);i--){
         if(matrix[i][y]==player)count++;
     }
-    for(var i=x;i<(x+3<7?x+3:6);i++){
+    for(var i=x;i<(x+4<7?x+4:6);i++){
         if(matrix[i][y]==player)count++;
     }
     console.log("hor",count);
@@ -34,10 +34,10 @@ function horizontal(x,y,player){
 }
 function diagonal1(x,y,player){
     var count=1;
-    for(var i=x,j=y;i>(x-3>0?x-3:0) && j>(y-3>0?y-3:0);i--,j--){
+    for(var i=x,j=y;i>(x-4>0?x-4:0) && j>(y-4>0?y-4:0);i--,j--){
         if(matrix[i][j]==player)count++;
     }
-    for(var i=x,j=y;i<(x+3<7?x+3:6) && j<(y+3<7?y+3:6);i++,j++){
+    for(var i=x,j=y;i<(x+4<7?x+4:6) && j<(y+4<7?y+4:6);i++,j++){
         if(matrix[i][j]==player)count++;
     }
     console.log("d1",count);
@@ -46,10 +46,10 @@ function diagonal1(x,y,player){
 }
 function diagonal2(x,y,player){
     var count=1;
-    for(var i=x,j=y;i>(x-3>0?x-3:0) && j<(y+3<7?y+3:6);i--,j++){
+    for(var i=x,j=y;i>(x-4>0?x-4:0) && j<(y+4<7?y+4:6);i--,j++){
         if(matrix[i][j]==player)count++;
     }
-    for(var i=x,j=y;i<(x+3<7?x+3:6) && j>(y-3>0?y-3:0);i++,j--){
+    for(var i=x,j=y;i<(x+4<7?x+4:6) && j>(y-4>0?y-4:0);i++,j--){
         if(matrix[i][j]==player)count++;
     }
     console.log("d2",count);
@@ -102,28 +102,28 @@ module.exports.isValid=isValid;
 
 //code for testing
 
-// restart();
-// isValid(1);
-// makeMove(1);
-// isValid(2)
-// makeMove(2);
-// isValid(1);
-// makeMove(1);
-// isValid(1);
-// makeMove(1);
-// isValid(2)
-// makeMove(2);
-// isValid(1);
-// makeMove(1);
-// isValid(1);
-// makeMove(1);
-// isValid(2)
-// makeMove(2);
-// isValid(1);
-// makeMove(1);
-// isValid(1);
-// makeMove(1);
-// isValid(2)
-// makeMove(2);
-// isValid(1);
-// makeMove(1);
+restart();
+isValid(1);
+makeMove(1);
+isValid(2)
+makeMove(2);
+isValid(1);
+makeMove(1);
+isValid(2)
+makeMove(2);
+isValid(1);
+makeMove(1);
+isValid(2)
+makeMove(2);
+isValid(1);
+makeMove(1);
+isValid(2)
+makeMove(2);
+isValid(1);
+makeMove(1);
+isValid(2)
+makeMove(2);
+isValid(1);
+makeMove(1);
+isValid(2)
+makeMove(2);
