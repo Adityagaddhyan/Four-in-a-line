@@ -119,13 +119,13 @@ module.exports.isValid = isValid;
 //code for testing
 
 restart();
-makeMove(1);
-makeMove(2);
-makeMove(1);
-makeMove(2);
-makeMove(2);
-makeMove(1);
-makeMove(2);
-makeMove(1);
-makeMove(2);
-makeMove(1);
+// makeMove(1);
+// makeMove(2);
+// makeMove(1);
+// makeMove(2);
+// makeMove(2);
+// makeMove(1);
+// makeMove(2);
+// makeMove(1);
+// makeMove(2);
+// makeMove(1);
