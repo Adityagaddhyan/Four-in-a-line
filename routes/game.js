@@ -102,28 +102,28 @@ module.exports.isValid=isValid;
 
 //code for testing
 
-restart();
-isValid(1);
-makeMove(1);
-isValid(2)
-makeMove(2);
-isValid(1);
-makeMove(1);
-isValid(2)
-makeMove(2);
-isValid(1);
-makeMove(1);
-isValid(2)
-makeMove(2);
-isValid(1);
-makeMove(1);
-isValid(2)
-makeMove(2);
-isValid(1);
-makeMove(1);
-isValid(2)
-makeMove(2);
-isValid(1);
-makeMove(1);
-isValid(2)
-makeMove(2);
+// restart();
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
+// isValid(1);
+// makeMove(1);
+// isValid(2)
+// makeMove(2);
