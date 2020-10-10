@@ -16,4 +16,31 @@
 //     });
 // });
 // module.exports=getMousePosition(canvasElem,e)
+
+// module.exports=function(){
+//     console.log("concole");
+// }
+
     
+paper.install(window);
+window.onload = function() {
+    paper.setup('myCanvas1');
+    // Create a simple drawing tool:
+    var tool = new Tool();
+    var path;
+
+    // Define a mousedown and mousedrag handler
+    tool.onMouseDown = function(event) {
+        var point=event.point;
+       var col=Math.ceil(point.x/100);
+       console.log(col);
+       $.get("/start/"+col,function(data,status){
+           console.log(data);
+       })
+    }
+
+    tool.onMouseDrag = function(event) {
+        var point=event.point;
+        console.log(point);
+    }
+}
