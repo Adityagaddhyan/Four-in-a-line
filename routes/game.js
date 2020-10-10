@@ -22,7 +22,7 @@ function vertical(x, y, player) {
 
     }
     console.log("ver", count);
-    return count > 3;
+    return count > 4;
 }
 function horizontal(x, y, player) {
     var count = 1;
@@ -36,7 +36,7 @@ function horizontal(x, y, player) {
     }
     console.log("hor", count);
 
-    return count > 3;
+    return count > 4;
 }
 function diagonal1(x, y, player) {
     var count = 1;
@@ -52,7 +52,7 @@ function diagonal1(x, y, player) {
     }
     console.log("d1", count);
 
-    return count > 3;
+    return count > 4;
 }
 function diagonal2(x, y, player) {
     var count = 1;
@@ -68,7 +68,7 @@ function diagonal2(x, y, player) {
     }
     console.log("d2", count);
 
-    return count > 3;
+    return count > 4;
 }
 function checkWon(x, y, player) {
     return horizontal(x, y, player) || vertical(x, y, player) || diagonal1(x, y, player) || diagonal2(x, y, player);
@@ -116,16 +116,16 @@ module.exports.isValid = isValid;
 
 //code for testing
 
-// restart();
-// makeMove(1);
-// makeMove(1);
-// makeMove(2);
-// makeMove(2);
-// makeMove(3);
-// makeMove(3);
-// makeMove(4);
-// makeMove(4);
-// makeMove(1);
-// makeMove(2);
-// makeMove(1);
-// makeMove(2);
+restart();
+makeMove(1);
+makeMove(1);
+makeMove(2);
+makeMove(2);
+makeMove(3);
+makeMove(3);
+makeMove(4);
+makeMove(4);
+makeMove(1);
+makeMove(2);
+makeMove(1);
+makeMove(2);

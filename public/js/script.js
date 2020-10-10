@@ -47,6 +47,7 @@ window.onload = function () {
             if (data.valid) {
                 document.getElementById("info").textContent="Player " +(movenumber%2?1:2) +"'s move!";
                 document.getElementById("info").classList.toggle("card-pannel-green");
+                if(data.won)document.getElementById('info').textContent= "Player "+(movenumber%2?2:1)+" won!";
                 console.log(data);  
                 row = makemove(col);
                 console.log(row,col);
