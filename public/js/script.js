@@ -39,12 +39,14 @@ window.onload = function () {
     // Define a mousedown and mousedrag handler
     tool.onMouseDown = function (event) {
         var point = event.point;
-        var col = Math.ceil(point.x / 100);
+        var col = Math.ceil(point.x / 90);
         console.log(col);
         var row;
         var col_=4;
         $.get("/start/" + col, function (data, status) {
             if (data.valid) {
+                document.getElementById("info").textContent="Player " +(movenumber%2?1:2) +"'s move!";
+                document.getElementById("info").classList.toggle("card-pannel-green");
                 console.log(data);  
                 row = makemove(col);
                 console.log(row,col);
@@ -58,9 +60,9 @@ window.onload = function () {
     }
 
     function makeCircle(row,col,player) {
-        var x=col*100-50;
-        var y=800-row*100-50;
-        var myCircle = new Path.Circle(new Point(x,y), 40);
+        var x=col*90-45;
+        var y=630+90-row*90-45;
+        var myCircle = new Path.Circle(new Point(x,y), 35);
         myCircle.fillColor = player==0?'yellow':'green';
     }
     tool.onMouseDrag = function (event) {

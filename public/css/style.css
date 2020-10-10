@@ -9,15 +9,26 @@
     flex: 1 0 auto;
   }
  .thincanvas{
-   width:700px;
-   height: 700px;
+   width:630px;
+   height: 630px;
    border: 1px solid black;
  }
   .canvasbox{
     display: flex;
     margin: 10% auto;
   justify-content: center;
+  margin-top: 5%;
 }
+.card-panel-green{
+  background: #b2ff59;
+  color: blue;
+}
+.card-panel{
+  margin-top: 3%;
+  color:white;
+  padding: 5;
+}
+
 .optionbox{
   display: flex;
   margin:2% 14%;
