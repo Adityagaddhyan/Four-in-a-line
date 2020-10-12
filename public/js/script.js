@@ -20,7 +20,7 @@ window.onload = function () {
         console.log(col);
         var row;
         var col_=4;
-        $.get("/start/" + col, function (data, status) {
+        $.get(window.location.pathname+"/" + col, function (data, status) {
             if (data.valid) {
                 document.getElementById("info").textContent="Player " +(movenumber%2?1:2) +"'s move!";
                 document.getElementById("info").classList.toggle("card-pannel-green");
