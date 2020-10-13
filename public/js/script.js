@@ -19,8 +19,8 @@ window.onload = function () {
         var col = Math.ceil(point.x / 90);
         console.log(col);
         var row;
-        var col_=4;
-        $.get(window.location.pathname+"/" + col, function (data, status) {
+        var col_=col-1;
+        $.get(window.location.pathname+"/" + col_, function (data, status) {
             if (data.valid) {
                 document.getElementById("info").textContent="Player " +(movenumber%2?1:2) +"'s move!";
                 document.getElementById("info").classList.toggle("card-pannel-green");

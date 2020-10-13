@@ -16,17 +16,14 @@ const PORT=4000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//host public dir
+//host public dir   
 app.use(express.static("public"));
 
 //session
 app.use(session({
     secret: "secret message",
     resave: false,
-    saveUninitialized: false,
-    cookie: {
-        maxAge: 12000000
-    }
+    saveUninitialized: true
 }));
 
 //view enfine

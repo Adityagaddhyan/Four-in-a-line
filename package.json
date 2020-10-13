@@ -10,6 +10,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jquery": "^3.5.1",
+    "locus": "^2.0.4",
     "method-override": "^3.0.0",
     "paper": "^0.12.11",
     "rand-token": "^1.0.1",
