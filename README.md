@@ -5,6 +5,7 @@ Four in a line is a classic mindgame where the player has to make a straight cha
 ##  Key features
 -   Implements express-session for multi session and allows multiple user to play simetaneously.
 -   Uses Paper.JS for better design and animation.
+-   Use redis store for session storage.
 
 ### Installation
 
