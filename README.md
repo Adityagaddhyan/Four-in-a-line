@@ -32,3 +32,6 @@ $ npm test
 -   Start Game: localhost:4000/start
 
 ##  Screens
+![Game page 1](https://github.com/Adityagaddhyan/Four-in-a-line/blob/master/screenshot/Screenshot%20from%202020-10-13%2023-21-13.png)
+![Game page 2](https://github.com/Adityagaddhyan/Four-in-a-line/blob/master/screenshot/Screenshot%20from%202020-10-13%2023-20-38.png)
+
