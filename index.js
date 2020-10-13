@@ -6,6 +6,12 @@ const methodOverride=require("method-override");
 //make app
 const   app = express();
 
+//redis
+const redis = require('redis')
+ 
+let RedisStore = require('connect-redis')(session)
+let redisClient = redis.createClient()
+
 //method override
 app.use(methodOverride("_method"));
 
@@ -22,6 +28,7 @@ app.use(express.static("public"));
 //session
 app.use(session({
     secret: "secret message",
+    store: new RedisStore({ client: redisClient }),
     resave: false,
     saveUninitialized: true
 }));
