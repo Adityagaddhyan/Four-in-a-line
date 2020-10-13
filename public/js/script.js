@@ -26,9 +26,14 @@ window.onload = function () {
                 document.getElementById("info").classList.toggle("card-pannel-green");
                 if(data.won){
                     document.getElementById('info').textContent= "Player "+(movenumber%2?2:1)+" won!";
-                    $('canvas').fadeOut('slow');
+                    $('canvas').fadeOut(8000);
                     $('#newgame').fadeIn('slow');
 
+                }
+                else if(data.draw){
+                    document.getElementById('info').textContent= "Its a draw!";
+                    $('canvas').fadeOut('slow');
+                    $('#newgame').fadeIn('slow');
                 }
                 console.log(data);  
                 row = makemove(col);
@@ -46,7 +51,7 @@ window.onload = function () {
         var x=col*90-45;
         var y=630+90-row*90-45;
         var myCircle = new Path.Circle(new Point(x,y), 35);
-        myCircle.fillColor = player==0?'#40c4ff':'#76ff03';
+        myCircle.fillColor = player==0?'#F1D302':'#235789';
     }
    
     tool.onMouseDrag = function (event) {

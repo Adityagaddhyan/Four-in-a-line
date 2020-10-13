@@ -27,6 +27,7 @@ function isValid(req,res,next){
   console.log(req.params.col);
   if(req.session.array[6][col]!=0){
     res.json({"valid":false});
+    return;
   }
   next();
 }
