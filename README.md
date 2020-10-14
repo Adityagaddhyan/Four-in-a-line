@@ -9,7 +9,7 @@ Four in a line is a classic mindgame where the player has to make a straight cha
 
 ### Installation
 
-Four in a row requires [Node.js](https://nodejs.org/) v10+ to run.
+Four in a row requires [Node.js](https://nodejs.org/) v10+ and [Redis v5.0.7+](https://redis.io/) to run.
 
 Install the dependencies and devDependencies and start the server.
 
