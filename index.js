@@ -11,8 +11,8 @@ const redis = require('redis')
  
 let RedisStore = require('connect-redis')(session)
 let redisClient = redis.createClient({
-    port:process.env.REDIS_PORT,
-    host:process.env.REDIS_HOST
+    port:process.env.REDIS_PORT || 6379,
+    host:process.env.REDIS_HOST || 'localhost'
 })
 
 //method override
