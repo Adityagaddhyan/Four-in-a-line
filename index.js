@@ -10,7 +10,10 @@ const   app = express();
 const redis = require('redis')
  
 let RedisStore = require('connect-redis')(session)
-let redisClient = redis.createClient()
+let redisClient = redis.createClient({
+    port:process.env.REDIS_PORT,
+    host:process.env.REDIS_HOST
+})
 
 //method override
 app.use(methodOverride("_method"));
