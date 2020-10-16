@@ -10,7 +10,7 @@ const   app = express();
 app.use(methodOverride("_method"));
 
 //port
-const PORT=4000;
+const PORT=process.env.Ports || 4000;
 
 //use body parser
 app.use(bodyParser.json());
