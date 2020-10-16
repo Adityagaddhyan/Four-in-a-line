@@ -77,6 +77,7 @@ function makeMove(req,res,next){
     else count=0;
     if(flag=count>3){
       res.json({"valid":true,"won":true,"player":player,"draw":false})
+      return;
     }
   }
   res.json({"valid":true,"won":false,"player":player,"draw":false});

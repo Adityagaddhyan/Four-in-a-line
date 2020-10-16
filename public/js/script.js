@@ -32,7 +32,7 @@ window.onload = function () {
                 }
                 else if(data.draw){
                     document.getElementById('info').textContent= "Its a draw!";
-                    $('canvas').fadeOut('slow');
+                    $('canvas').fadeOut(500);
                     $('#newgame').fadeIn('slow');
                 }
                 console.log(data);  
